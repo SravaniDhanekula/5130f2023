@@ -5,6 +5,14 @@ Project Concept: Our vision is to craft a streamlined and user-friendly website 
 Week 1 Progress Report:
 During the initial week, our focus was on the aesthetic development of the registration page through CSS. Simultaneously, the login and dashboard pages were brought to life in the frontend. Backend efforts are underway to establish robust database interactions for managing user data.
 
+Functionality:
+------------------
+On navigation to login page, user can sign in and proceed to dashboard page.
+If the user doesn't have account, user can navigate to sign up page and create the account.
+Once the user account is created, he can navigate to sign in page and enter the account details and navigate to dashboard page.
+
+Currently, we didn't do make the data entering mandatory.So once the screen navigates to login page---> Click on 'Sign In' button to navigate to 'Dashboard' page.
+
 Encountered Issues:
 --------------------
 1. We aimed to streamline the user experience by reducing lag during the transition between the login and sign-up pages. However, this integration, conducted on a prototype HTML basis, resulted in several unexpected integration difficulties.
