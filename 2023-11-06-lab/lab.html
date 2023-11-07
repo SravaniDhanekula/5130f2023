@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Validation Form</title>
+<style>
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to right, #74ebd5, #acb6e5);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .wrapper {
+    width: 100%;
+    max-width: 450px;
+    background: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+
+  .validation-form h2 {
+    color: #333;
+    font-size: 28px;
+    margin-bottom: 30px;
+    font-weight: 600;
+  }
+
+  .form-field {
+    position: relative;
+    margin-bottom: 20px;
+    text-align: left;
+  }
+
+  .form-field label {
+    display: block;
+    margin-bottom: 8px;
+    color: #666;
+    font-weight: 600;
+  }
+
+  .form-field input[type="text"] {
+    width: calc(100% - 24px);
+    padding: 12px;
+    border: 2px solid #e3e3e3;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-size: 16px;
+  }
+
+  .form-field input[type="text"]:focus {
+    border-color: #008ffb;
+    box-shadow: 0 0 0 4px #d0f0fd;
+  }
+
+  .feedback {
+    margin-top: 5px;
+    height: 20px;
+    font-size: 14px;
+  }
+
+  .error {
+    color: #f44336;
+  }
+
+  .success {
+    color: #4caf50;
+  }
+
+  .submit-btn, .reset-btn {
+    padding: 10px 30px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  .submit-btn {
+    background-color: #45a548;
+    color: white;
+    margin-right: 10px;
+  }
+
+  .submit-btn:hover {
+    background-color:  #45a548;
+  }
+
+  .reset-btn {
+    background-color: #f44336;
+    color: white;
+  }
+
+  .reset-btn:hover {
+    background-color: #e31b0c;
+  }
+
+  @media (max-width: 480px) {
+    .wrapper {
+      width: 90%;
+    }
+
+    .form-field input[type="text"] {
+      padding: 10px;
+    }
+
+    .submit-btn, .reset-btn {
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+  }
+   /* Pop-up Modal Styles */
+   .modal {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 60px;
+  }
+
+  .modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    border-radius: 5px;
+  }
+
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+    <div class="wrapper">
+        <h2>Input Validation Form</h2>
+        <form id="validationForm" class="validation-form" novalidate>
+            <div class="form-field">
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email" required>
+                <div class="feedback" id="emailFeedback"></div>
+            </div>
+
+            <div class="form-field">
+                <label for="phone">Phone Number:</label>
+                <input type="text" id="phone" name="phone" required>
+                <div class="feedback" id="phoneFeedback"></div>
+            </div>
+
+            <div class="form-field">
+                <label for="url">Web Page URL:</label>
+                <input type="text" id="url" name="url" required>
+                <div class="feedback" id="urlFeedback"></div>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="submit-btn">Submit</button>
+                <button type="reset" class="reset-btn">Reset</button>
+            </div>
+        </form>
+    </div>
+
+<script>
+   document.addEventListener('DOMContentLoaded', (event) => {
+    const form = document.getElementById('validationForm');
+    form.addEventListener('reset', clearFeedback);
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      // Validation checks
+      const isEmailValid = validateField('email', getDetailedEmailFeedback);
+      const isPhoneValid = validateField('phone', getDetailedPhoneFeedback);
+      const isUrlValid = validateField('url', getDetailedURLFeedback);
+
+      // If all fields are valid, show a success message
+      if (isEmailValid && isPhoneValid && isUrlValid) {
+        alert('Success! All details are valid.');
+      }
+      else{
+        alert('Error! Please enter the valid details.');
+      }
+    });
+
+     // Attach focusout event listeners
+     document.getElementById('email').addEventListener('focusout', function() {
+      validateField('email', getDetailedEmailFeedback);
+    });
+    
+    document.getElementById('phone').addEventListener('focusout', function() {
+      validateField('phone', getDetailedPhoneFeedback);
+    });
+    
+    document.getElementById('url').addEventListener('focusout', function() {
+      validateField('url', getDetailedURLFeedback);
+    });
+  });
+  
+
+  function clearFeedback() {
+    ['email', 'phone', 'url'].forEach(field => {
+      let feedbackElement = document.getElementById(field + 'Feedback');
+      feedbackElement.textContent = '';
+      feedbackElement.className = 'feedback';
+    });
+  }
+
+  function validateField(fieldId, validationFunction) {
+    let value = document.getElementById(fieldId).value;
+    let feedbackElement = document.getElementById(fieldId + 'Feedback');
+    let feedback = validationFunction(value);
+    feedbackElement.textContent = feedback.message;
+    feedbackElement.className = feedback.valid ? 'feedback success' : 'feedback error';
+    return feedback.valid;
+  }
+
+  function getDetailedEmailFeedback(email) {
+    if (!email.includes('@')) return { message: 'Invalid email: Missing @ symbol.', valid: false };
+    if (!email.includes('.')) return { message: 'Invalid email: Missing dot (.) in domain part.', valid: false };
+    if (!/^[\w\.-]+@[\w\.-]+\.\w+$/.test(email)) return { message: 'Invalid email: Incorrect format.', valid: false };
+    return { message: 'Email is valid.', valid: true };
+  }
+
+  function getDetailedPhoneFeedback(phone) {
+    if (!/^\+?1?[-.\s]?(\(\d{3}\)|\d{3})[-.\s]?\d{3}[-.\s]?\d{4}$/.test(phone)) return { message: 'Invalid phone number: Use +1 (XXX) XXX-XXXX format.', valid: false };
+    return { message: 'Phone number is valid.', valid: true };
+  }
+
+  function getDetailedURLFeedback(url) {
+    if (!url.startsWith('http://') && !url.startsWith('https://')) return { message: 'Invalid URL: Missing protocol (http:// or https://).', valid: false };
+    if (!/\.\w+/.test(url)) return { message: 'Invalid URL: Missing top-level domain (like .com or .org).', valid: false };
+    if (!/^(https?:\/\/)?[\w\.-]+\.\w{2,}([\/\w \.-])\/?$/.test(url)) return { message: 'Invalid URL: Incorrect format.', valid: false };
+    return { message: 'URL is valid.', valid: true };
+  }
+</script>
+</body>
+</html>
