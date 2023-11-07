@@ -30,7 +30,7 @@ Planned Enhancements:
 5. Crafting a responsive UI for an intuitive dashboard experience.
 6. Responsive integration of Google Maps, tailored to user-selected locales.
 
-Achievements/ Accomplishments:
+Achievements/ Accomplishments/ I am proud of below functionalities:
 -----------------------
 1. I have successfully created the HTML framework for the dashboard page. 
 Additionally, I incorporated a feature allowing users to switch between light and dark mode for enhanced visual comfort on the dashboard.
