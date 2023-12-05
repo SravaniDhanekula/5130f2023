@@ -2,8 +2,8 @@ Project Name: All-in-One Outdoor Activity Website
 
 Project Concept: The Outdoor Activity website is a web application designed to provide users with a comprehensive guide to exploring various travel destinations. It offers detailed information about beaches, trails, and sightseeing opportunities, along with user authentication features for a personalized experience.
 
-Week 5 Progress Report:
-In the last week, we have developed and redesigned individual pages for beaches, sightseeing, and trails, each with unique content and images. Implemented user authentication with separate login and registration functionalities.Introduced responsive design elements for better mobile compatibility. Integrated external APIs like Bootstrap for UI components and Firebase for backend services. This Client page represents the tourism or adventure-themed website, with a focus on tours, events, and exploration. Run the home.html file to see the Client page and its implemented functionalities are seen upon respective button clicks.
+Project Gist:
+We have developed and redesigned individual pages for beaches, sightseeing, and trails, each with unique content and images. Implemented user authentication with separate login and registration functionalities.Introduced responsive design elements for better mobile compatibility. Integrated external APIs like Bootstrap for UI components and Firebase for backend services. This Client page represents the tourism or adventure-themed website, with a focus on tours, events, and exploration. Run the home.html file to see the Client page and its implemented functionalities are seen upon respective button clicks.
 
 Authentication Pages: Login & Registration
 ---------------------------------------------
@@ -27,6 +27,20 @@ Beaches Page:
 2. Each beach destination includes descriptive content like location, best time to visit, activities available, and nearby attractions.
 3. High-quality images accompany each description, giving users a visual taste of what to expect.
 4. Interactive elements such as photo galleries, user ratings, and reviews enrich the user experience.
+
+Sightseeing Page:
+-----------------------------
+1. This page is a treasure trove of information on key sightseeing locations, including historical landmarks, museums, and urban attractions.
+2. Users can find detailed guides, opening hours, ticket information, and tips to maximize their visit.
+3. Features interactive elements like virtual tours, visitor anecdotes, and expert recommendations.
+4. The page might also offer itinerary suggestions and links to book guided tours or tickets.
+
+Trails Page:
+-----------------------------
+1. Tailored for hiking and adventure enthusiasts, this page lists various famous trails and hiking spots.
+2. Detailed information on each trail includes difficulty level, distance, estimated completion time, and scenic highlights.
+3. Incorporates maps and possibly virtual tours to give users a better understanding of the terrain.
+4. Links to essential gear and preparation tips for different trails are provided to assist in planning.
 
 Encountered Issues:
 --------------------
