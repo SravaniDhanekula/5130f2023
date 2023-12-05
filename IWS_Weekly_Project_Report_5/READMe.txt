@@ -3,7 +3,7 @@ Project Name: All-in-One Outdoor Activity Website
 Project Concept: The Outdoor Activity website is a web application designed to provide users with a comprehensive guide to exploring various travel destinations. It offers detailed information about beaches, trails, and sightseeing opportunities, along with user authentication features for a personalized experience.
 
 Week 5 Progress Report:
-In the last week, we have developed and redesigned individual pages for beaches, sightseeing, and trails, each with unique content and images. Implemented user authentication with separate login and registration functionalities.Introduced responsive design elements for better mobile compatibility. Integrated external APIs like Bootstrap for UI components and Firebase for backend services. This Client page represents the tourism or adventure-themed website, with a focus on tours, events, and exploration. Run the adventure.html file to see the Client page and its implemented functionalities are seen upon respective button clicks.
+In the last week, we have developed and redesigned individual pages for beaches, sightseeing, and trails, each with unique content and images. Implemented user authentication with separate login and registration functionalities.Introduced responsive design elements for better mobile compatibility. Integrated external APIs like Bootstrap for UI components and Firebase for backend services. This Client page represents the tourism or adventure-themed website, with a focus on tours, events, and exploration. Run the home.html file to see the Client page and its implemented functionalities are seen upon respective button clicks.
 
 Authentication Pages: Login & Registration
 ---------------------------------------------
