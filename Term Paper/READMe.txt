@@ -31,6 +31,6 @@ REFERENCES:
 • https://www.ijrar.org/papers/IJRAR1ANP010.pdf
 • https://hal.archives-ouvertes.fr/hal-03024764/document
 • https://iopscience.iop.org/article/10.1088/1742-6596/1744/4/042037/pdf
-• https://www.rapid7.com/blog/post/2017/01/11/the-pros-cons-of-intrusion detectionsystem/#:~:text=An%20IDS%20cannot%20see%20into,until%20the%20intrusion%20is%20
+• https://www.rapid7.com/blog/post/2017/01/11/the-pros-cons-of-intrusiondetectionsystem/#:~:text=An%20IDS%20cannot%20see%20into,until%20the%20intrusion%20is%20
 discovered.
 
